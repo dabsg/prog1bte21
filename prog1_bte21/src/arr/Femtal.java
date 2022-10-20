@@ -23,7 +23,17 @@ public class Femtal {
 		
 		
 		//printar arrayen efter loopen
-		System.out.println(Arrays.toString(k));
+		System.out.println(k);
+		
+		
+		for (int i = 0; i < k.length; i++) {
+			
+			System.out.println(k[i]);
+		}
+		
+		
+		
+		
 		
 	}
 }
