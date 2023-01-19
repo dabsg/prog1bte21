@@ -1,5 +1,6 @@
 package selektion;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Bankomat {
@@ -10,38 +11,58 @@ public class Bankomat {
 
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("1:uttag \n2:insättning \n3:saldo");
+		int val = 2;
 
-		int val = input.nextInt();
+		do {
+			System.out.println("1:uttag \n2:insättning \n3:saldo");
 
-		switch (val) {
+			val = input.nextInt();
 
-		case 1:
-			System.out.println("hur mycket vill du ta ut");
-			int uttagsbelopp = input.nextInt();
+			switch (val) {
 
-			if (uttagsbelopp <= saldo) {
+			case 1:
+				System.out.println("hur mycket vill du ta ut");
+				int uttagsbelopp = input.nextInt();
 
-				if (uttagsbelopp % 100 == 0) {
+				if (uttagsbelopp <= saldo) {
 
-					System.out.println("du får " + (uttagsbelopp / 100) + " hundralappar");
-					saldo=saldo-uttagsbelopp;
+					if (uttagsbelopp % 100 == 0) {
+
+						System.out.println("du får " + (uttagsbelopp / 100) + " hundralappar");
+						saldo = saldo - uttagsbelopp;
+					} else {
+
+						int hundralappar = (int) ((uttagsbelopp / 100.0) + 1); // 7,53
+
+						saldo = saldo - hundralappar*100;
+						System.out.println("du får " + hundralappar + " hundralappar");
+					}
+
 				} else {
-
-					int hundralappar = (int) ((uttagsbelopp / 100.0) + 1); // 7,53
-
-					saldo = saldo - uttagsbelopp;
-					System.out.println("du får " +hundralappar+" hundralappar");
+					System.out.println("du har inte tillräckligt på ditt konto saldo=" + saldo);
 				}
 
-			} else {
-				System.out.println("du har inte tillräckligt på ditt konto saldo="+saldo);
+				break;
+
+			case 2:
+				System.out.println("hur mycket vill du sätta in");
+				int insättning = input.nextInt();
+				saldo = saldo + insättning;
+				// saldo+=insättning;
+				break;
+
+			case 3:
+
+				System.out.println("saldo=" + saldo);
+				break;
+
+			default:
+				System.out.println("avsluta");
+				System.exit(0);
+
 			}
 
-			break;
-
-		}
+		}while(val!=4);
 
 	}
-
 }
