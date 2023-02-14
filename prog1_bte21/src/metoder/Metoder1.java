@@ -3,7 +3,7 @@ package metoder;
 public class Metoder1 {
 
 	// prints array 
-	private static void printArr() {                 // metodhuvud
+	 static void printArr() {                 // metodhuvud
 		
 		int a[] = {1,2,3554,56};
 		
