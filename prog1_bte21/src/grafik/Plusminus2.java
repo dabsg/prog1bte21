@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class Plusminus extends JFrame implements ActionListener {
+public class Plusminus2 extends JFrame implements ActionListener {
 
 	int värde=0;
 	
@@ -16,7 +16,7 @@ public class Plusminus extends JFrame implements ActionListener {
 	JLabel text = new JLabel(""+värde);
 	
 	
-	 public Plusminus() {
+	 public Plusminus2() {
 		 
 		 this.setLayout(new FlowLayout());
 		 this.setVisible(true);
@@ -24,8 +24,24 @@ public class Plusminus extends JFrame implements ActionListener {
 		 this.add(minus);
 		 this.add(plus);
 		 this.add(text);
-		 plus.addActionListener(this);
-		 minus.addActionListener(this);
+		 plus.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				värde++;
+				text.setText(""+värde);
+				
+			}
+		});
+		 minus.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				värde++;
+				text.setText(""+värde);
+				
+			}
+		});
 	 }
 	
 	
@@ -33,26 +49,12 @@ public class Plusminus extends JFrame implements ActionListener {
 	 
 	public static void main(String[] args) {
 	
-	new Plusminus();
-	new Plusminus();
+	new Plusminus2();
+	new Plusminus2();
 	
 	}
 
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource()==plus) {
-			
-			värde++;
-			
-		}if(e.getSource()==minus) {
-			
-			värde--;
-			
-		}
-		
-		text.setText(""+värde);
-		
-	}
+	
+	
 }
