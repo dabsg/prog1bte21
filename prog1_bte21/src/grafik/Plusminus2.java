@@ -7,7 +7,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class Plusminus2 extends JFrame implements ActionListener {
+public class Plusminus2 extends JFrame {
+
 
 	int värde=0;
 	
@@ -37,7 +38,7 @@ public class Plusminus2 extends JFrame implements ActionListener {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				värde++;
+				värde--;
 				text.setText(""+värde);
 				
 			}
