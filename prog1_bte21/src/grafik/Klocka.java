@@ -7,6 +7,8 @@ import java.awt.GraphicsEnvironment;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,12 +17,38 @@ public class Klocka extends JFrame{
 
 	JLabel clock= new JLabel("");
 	SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");  
-	Date date = new Date();  
+	Date date ;  
 	
 	
 	
 	
 	public Klocka() {
+		
+		
+		date= new Date();
+		
+		
+		 TimerTask task = new TimerTask() {
+		        public void run() {
+		           
+		        	date= new Date();
+		        	
+		        	
+		        	clock.setText(""+formatter.format(date));
+		        	
+		        	
+		        }
+		    };
+		    Timer timer = new Timer("Timer");
+		    
+		    long delay = 1000L;
+		 
+		    long period = 1000L;
+		    timer.scheduleAtFixedRate(task, delay, period);
+		
+		
+		
+		
 		
 		
 		Font font = null;
