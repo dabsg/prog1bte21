@@ -28,6 +28,8 @@ public class Klocka extends JFrame{
 		date= new Date();
 		
 		
+		
+		
 		 TimerTask task = new TimerTask() {
 		        public void run() {
 		           
