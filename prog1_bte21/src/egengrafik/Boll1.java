@@ -18,21 +18,13 @@ public class Boll1 extends JComponent {
 	Timer t;
 
 	Color c = new Color(200, 200, 200);
-	
+
 	public Boll1() {
 
-		
-		
-		
-		
-		xv= (int) ( Math.random()*10-5   );
-		
-		yv=(int) ( Math.random()*10-5   );
-	
-		
-		
-		
-		
+		xv = (int) (Math.random() * 10 - 5);
+
+		yv = (int) (Math.random() * 10 - 5);
+
 		setPreferredSize(new Dimension(500, 500));
 
 		t = new Timer(10, e -> {
@@ -48,32 +40,29 @@ public class Boll1 extends JComponent {
 
 	@Override
 	protected void paintComponent(Graphics g) {
-		
-		g.setColor(new Color(100,100,255));
-		g.fillOval(x, y, 100, 100);
+
+		g.setColor(new Color(100, 100, 255));
+		g.fillRect(x, y, 100, 100);
 
 		super.paintComponent(g);
 	}
 
 	public void move() {
 
-		if (x > 500-100 || x<0) {
+		if (x > 500 - 100 || x < 0) {
 
 			xv = xv * -1;
 
 		}
-		if (y > 500-100 || y<0) {
+		if (y > 500 - 100 || y < 0) {
 
 			yv = yv * -1;
 
 		}
-		
-		
 
+		x = x + xv;
 
-		x=x+xv;	
-		
-		y=y+yv;
+		y = y + yv;
 		repaint();
 
 	}
