@@ -12,8 +12,8 @@ public class Boll {
 
 	public Boll() {
 		
-		this.x= (int)(Math.random()*450);
-		this.y= (int)(Math.random()*450);
+		this.x= (int)(Math.random()*400);
+		this.y= (int)(Math.random()*400);
 		this.xv = (int) (Math.random() * 11 - 5);
 
 		this.yv = (int) (Math.random() * 11 - 5);
