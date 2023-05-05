@@ -26,6 +26,8 @@ public class Kombo extends JComponent implements KeyListener {
 
 		super.paintComponent(g);
 		g.fillPolygon(x, y, y.length);
+		
+		
 	}
 
 	public static void main(String[] args) {
@@ -46,11 +48,11 @@ public class Kombo extends JComponent implements KeyListener {
 		
 		right.addActionListener(e -> {
 
-			for (int i = 0; i < k.x.length; i++) {
+			//for (int i = 0; i < k.x.length; i++) {
 
-				k.x[i] += 5;
+				k.x[0] += 5;
 				
-			}
+			//}
 			k.requestFocusInWindow();
 			k.repaint();
 

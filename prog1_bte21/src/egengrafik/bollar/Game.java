@@ -30,6 +30,8 @@ public class Game extends JComponent {
 		
 	     b1[i]=new Boll();
 	}
+	
+	
 		
 		
 		
