@@ -9,7 +9,7 @@ public class Char1 {
 			
 			char c='d';
 			
-			char c1=261;
+			char c1=72;
 			
 			char tecken = 'A';
 			int teckenkod= tecken;
@@ -22,7 +22,7 @@ public class Char1 {
 			System.out.println(c3);
 			
 		//	JOptionPane.showMessageDialog(null,c1);
-			//System.out.println(c1);
+			System.out.println(c1);
 			
 			
 		}

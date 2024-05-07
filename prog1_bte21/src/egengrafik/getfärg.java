@@ -11,12 +11,12 @@ import java.awt.Robot;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-public class Musse extends JComponent {
+public class getfärg extends JComponent {
 
 	JFrame f;
 	
 	
-	public Musse(JFrame f) {
+	public getfärg(JFrame f) {
 		
 		setPreferredSize(new Dimension(400,400));
 		
@@ -35,11 +35,9 @@ public class Musse extends JComponent {
 		}
 		super.paintComponent(g);
 		g.setColor(Color.black);
-		g.drawRect(0, 0, 200, 200);
+		g.fillRect(0, 0, 200, 200);
 		
-		g.drawOval(100, 100, 100, 100);
-		g.fillOval(300, 300, 50, 50);
-		System.out.println(""+robot.getPixelColor(210, 210).toString());
+		System.out.println(""+robot.getPixelColor(110, 110).toString());
 		
 	     g.drawString("NASA", 200, 200);
 		
@@ -51,7 +49,7 @@ public class Musse extends JComponent {
 		
 		f.setLayout(new FlowLayout());
 		f.setVisible(true);
-		f.setContentPane(new Musse(f));
+		f.setContentPane(new getfärg(f));
 		f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
 		f.pack();
 		
